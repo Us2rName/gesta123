@@ -1162,14 +1162,8 @@ function openModal(i){
   const tags=x.tags||[];
   document.getElementById("mTags").innerHTML=tags.map(t=>`<span class="modal-tag">${t}</span>`).join("");
 
-  // how it works section
+  // extra sections (no technical "how it works" shown to players)
   let sects="";
-  if(x.how){
-    sects+=`<div class="modal-section">
-      <div class="modal-section-title">Как это работает</div>
-      <div class="modal-detail">${x.how.replace(/\n/g,"<br>")}</div>
-    </div>`;
-  }
   if(x.sections){
     x.sections.forEach(s=>{
       sects+=`<div class="modal-section">
