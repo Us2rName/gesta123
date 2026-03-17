@@ -74,18 +74,24 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
 .site-header{
   position:sticky;top:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
-  padding:16px 28px;
-  background:rgba(10,10,15,.92);backdrop-filter:blur(14px);
+  padding:12px 32px;
+  background:rgba(10,10,15,.95);backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);
 }
+.header-brand{display:flex;flex-direction:column;gap:1px;}
 .logo-s{
-  font-family:'Montserrat',sans-serif;font-weight:900;font-size:19px;letter-spacing:-.5px;
+  font-family:'Montserrat',sans-serif;font-weight:900;
+  font-size:30px;letter-spacing:-1.5px;line-height:1;
   background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.logo-s-sub{
+  font-family:'JetBrains Mono',monospace;font-size:8.5px;
+  letter-spacing:3px;color:var(--text3);text-transform:uppercase;
 }
 .hstat{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text2);letter-spacing:.4px;}
 
 /* WRAP */
-.wrap{max-width:760px;margin:0 auto;padding:52px 24px 80px;}
+.wrap{max-width:820px;margin:0 auto;padding:52px 32px 80px;}
 
 /* PAGE HEAD */
 .ph{padding:0 0 42px;}
@@ -150,9 +156,151 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
 .empty{padding:56px 0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text3);letter-spacing:1px;}
 
 /* FOOTER */
-footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+footer{
+  margin-top:64px;padding:32px 0 0;
+  border-top:1px solid var(--border);
+  display:flex;flex-direction:column;gap:22px;
+}
+.footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-bottom{
+  padding:16px 0;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+}
 .fl{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text3);letter-spacing:.3px;}
 .fl span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.footer-brand{display:flex;flex-direction:column;gap:4px;}
+.footer-logo{
+  font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;letter-spacing:-.5px;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.footer-tagline{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;}
+.footer-dev{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.footer-dev-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;}
+.tg-link{
+  display:flex;align-items:center;gap:8px;
+  text-decoration:none;
+  border:1px solid var(--border);
+  padding:8px 14px;
+  transition:all .2s ease;
+  color:var(--text2);
+}
+.tg-link:hover{border-color:rgba(41,182,246,.45);color:#29b6f6;background:rgba(41,182,246,.06);}
+.tg-link svg{flex-shrink:0;}
+.tg-link-name{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.3px;}
+.footer-divider{width:100%;height:1px;background:var(--border);}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.3px;}
+.footer-rights{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:.3px;text-align:right;}
+.footer-rights span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.footer-mid{
+  display:flex;align-items:stretch;gap:12px;flex-wrap:wrap;
+  padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.bot-launch{
+  flex:1;min-width:220px;
+  display:flex;align-items:center;gap:14px;
+  background:var(--surface);border:1px solid var(--border2);
+  padding:16px 20px;text-decoration:none;
+  transition:all .2s ease;position:relative;overflow:hidden;
+}
+.bot-launch::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(224,64,160,.08),rgba(155,93,229,.08),rgba(247,183,49,.04));
+  opacity:0;transition:opacity .2s;
+}
+.bot-launch:hover::before{opacity:1;}
+.bot-launch:hover{border-color:rgba(155,93,229,.5);}
+.bot-launch-icon{
+  width:40px;height:40px;border-radius:0;
+  background:linear-gradient(135deg,#e040a0,#9b5de5);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.bot-launch-icon svg{width:20px;height:20px;fill:white;}
+.bot-launch-text{display:flex;flex-direction:column;gap:3px;}
+.bot-launch-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--text3);text-transform:uppercase;}
+.bot-launch-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:-.2px;color:var(--text);}
+.bot-launch-sub{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text2);}
+.bot-launch-arrow{margin-left:auto;font-size:16px;color:var(--text3);transition:transform .2s;}
+.bot-launch:hover .bot-launch-arrow{transform:translateX(4px);color:var(--purple);}
+
+.footer-links{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.footer-policy-btn{
+  background:none;border:1px solid var(--border);
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  color:var(--text3);letter-spacing:.5px;
+  padding:8px 12px;cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.footer-policy-btn:hover{border-color:var(--border2);color:var(--text2);}
+
+/* POLICY MODAL */
+.policy-bg{
+  position:fixed;inset:0;background:rgba(0,0,0,.82);
+  z-index:600;display:flex;align-items:center;justify-content:center;
+  padding:20px;opacity:0;pointer-events:none;transition:opacity .2s ease;
+}
+.policy-bg.open{opacity:1;pointer-events:all;}
+.policy-modal{
+  background:var(--surface2);border:1px solid var(--border2);
+  max-width:560px;width:100%;max-height:88vh;
+  display:flex;flex-direction:column;
+  transform:translateY(12px) scale(.98);transition:transform .22s ease;
+}
+.policy-bg.open .policy-modal{transform:translateY(0) scale(1);}
+.policy-head{
+  padding:22px 24px 18px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0;
+}
+.policy-head-left{display:flex;flex-direction:column;gap:4px;}
+.policy-head-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--text3);text-transform:uppercase;}
+.policy-head-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;letter-spacing:-.3px;}
+.policy-head-title span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.policy-close{
+  background:none;border:1px solid var(--border);color:var(--text2);
+  width:30px;height:30px;cursor:pointer;font-size:16px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:border-color .15s;
+}
+.policy-close:hover{border-color:var(--border2);color:var(--text);}
+.policy-tabs-row{
+  display:flex;border-bottom:1px solid var(--border);flex-shrink:0;
+}
+.policy-tab{
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.5px;
+  padding:10px 16px;background:none;border:none;border-bottom:2px solid transparent;
+  color:var(--text3);cursor:pointer;white-space:nowrap;margin-bottom:-1px;transition:color .15s;
+}
+.policy-tab:hover{color:var(--text2);}
+.policy-tab.active{color:var(--text);border-bottom-color:var(--purple);}
+.policy-body{padding:22px 24px;overflow-y:auto;flex:1;}
+.policy-body::-webkit-scrollbar{width:4px;}
+.policy-body::-webkit-scrollbar-thumb{background:var(--border2);}
+.policy-section{margin-bottom:22px;}
+.policy-section-title{
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.5px;
+  color:var(--purple);text-transform:uppercase;margin-bottom:10px;
+}
+.policy-text{font-size:12px;color:var(--text2);font-weight:300;line-height:1.8;}
+.policy-text b{color:var(--text);font-weight:500;}
+.policy-foot{
+  padding:14px 24px;border-top:1px solid var(--border);flex-shrink:0;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.policy-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);}
+.policy-accept{
+  background:none;border:1px solid var(--border2);
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--text2);padding:8px 18px;cursor:pointer;transition:all .15s;
+}
+.policy-accept:hover{border-color:rgba(155,93,229,.6);color:var(--purple);}
+
+@media(max-width:500px){
+  .footer-top{flex-direction:column;align-items:flex-start;}
+  .footer-dev{align-items:flex-start;}
+  .footer-bottom{flex-direction:column;gap:6px;}
+  .footer-rights{text-align:left;}
+  .footer-mid{flex-direction:column;}
+  .footer-links{flex-wrap:wrap;}
+}
 
 /* ── MODAL ─────────────────────────────────────── */
 .modal-bg{
@@ -271,10 +419,36 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);displ
   </div>
 </div>
 
+<!-- POLICY MODAL -->
+<div class="policy-bg" id="policyBg" onclick="closePolicyByBg(event)">
+  <div class="policy-modal">
+    <div class="policy-head">
+      <div class="policy-head-left">
+        <div class="policy-head-label">GESTA Casino Empire</div>
+        <div class="policy-head-title" id="policyTitle">Политика <span>конфиденциальности</span></div>
+      </div>
+      <button class="policy-close" onclick="closePolicy()">✕</button>
+    </div>
+    <div class="policy-tabs-row">
+      <button class="policy-tab active" onclick="switchPolicy('privacy',this)">Конфиденциальность</button>
+      <button class="policy-tab" onclick="switchPolicy('terms',this)">Соглашение</button>
+      <button class="policy-tab" onclick="switchPolicy('rules',this)">Правила игры</button>
+    </div>
+    <div class="policy-body" id="policyBody"></div>
+    <div class="policy-foot">
+      <span class="policy-date">Редакция от 1 апреля 2026</span>
+      <button class="policy-accept" onclick="closePolicy()">Закрыть ✕</button>
+    </div>
+  </div>
+</div>
+
 <!-- MAIN -->
 <div id="main">
   <header class="site-header">
-    <span class="logo-s">GESTA</span>
+    <div class="header-brand">
+      <span class="logo-s">GESTA</span>
+      <span class="logo-s-sub">Casino Empire</span>
+    </div>
     <span class="hstat" id="hstat">100 идей</span>
   </header>
   <div class="wrap">
@@ -301,8 +475,46 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);displ
     <div class="cnt" id="cnt"></div>
     <div class="list" id="list"></div>
     <footer>
-      <span class="fl">gesta · v11 · живой мир</span>
-      <span class="fl">релиз <span>2 апреля 2026</span></span>
+      <!-- TOP: brand + dev contact -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">GESTA</div>
+          <div class="footer-tagline">Casino Empire · v11 · Живой мир</div>
+        </div>
+        <div class="footer-dev">
+          <div class="footer-dev-label">Связь с разработчиком</div>
+          <a class="tg-link" href="https://t.me/Tiffor" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
+            <span class="tg-link-name">@Tiffor</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- MID: bot launch + policy links -->
+      <div class="footer-mid">
+        <a class="bot-launch" href="https://t.me/bot_gesta_bot" target="_blank" rel="noopener">
+          <div class="bot-launch-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
+          </div>
+          <div class="bot-launch-text">
+            <span class="bot-launch-label">Игровой бот</span>
+            <span class="bot-launch-name">@bot_gesta_bot</span>
+            <span class="bot-launch-sub">Запустить в Telegram →</span>
+          </div>
+          <span class="bot-launch-arrow">›</span>
+        </a>
+        <div class="footer-links">
+          <button class="footer-policy-btn" onclick="openPolicy('privacy')">Политика конфиденциальности</button>
+          <button class="footer-policy-btn" onclick="openPolicy('terms')">Пользовательское соглашение</button>
+          <button class="footer-policy-btn" onclick="openPolicy('rules')">Правила игры</button>
+        </div>
+      </div>
+
+      <!-- BOTTOM: copyright -->
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 GESTA · релиз <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">2 апреля 2026</span></span>
+        <span class="footer-rights">Все права защищены · <span>GESTA Casino Empire</span></span>
+      </div>
     </footer>
   </div>
 </div>
@@ -991,7 +1203,128 @@ function closeModal(){
   openIdx=null;
 }
 function closeMbyBg(e){if(e.target===document.getElementById("modalBg"))closeModal();}
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
+// ── POLICY MODAL ─────────────────────────────────────────
+const POLICY_CONTENT = {
+  privacy: {
+    title: 'Политика <span>конфиденциальности</span>',
+    html: `
+      <div class="policy-section">
+        <div class="policy-section-title">1. Общие положения</div>
+        <p class="policy-text">GESTA Casino Empire («Игра», «Бот») — развлекательный Telegram-бот без реальных денег. Используя бота <b>@bot_gesta_bot</b>, вы соглашаетесь с настоящей политикой конфиденциальности. Разработчик: <b>@Tiffor</b>.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">2. Какие данные мы собираем</div>
+        <p class="policy-text">Бот автоматически получает от Telegram: <b>Telegram ID</b>, имя пользователя (<b>@username</b>), отображаемое имя. Эти данные необходимы исключительно для работы игровой механики — создания профиля, сохранения прогресса и идентификации в рейтингах.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">3. Как используются данные</div>
+        <p class="policy-text">Данные используются только внутри игры: ведение игрового счёта и баланса, отображение в таблицах лидеров, корректная работа механик кланов и районов. <b>Мы не продаём и не передаём ваши данные третьим лицам.</b></p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">4. Хранение данных</div>
+        <p class="policy-text">Игровые данные хранятся на защищённых серверах. При удалении аккаунта или запросе — данные удаляются в течение <b>30 дней</b>. Для запроса на удаление напишите разработчику: <b>@Tiffor</b>.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">5. Cookies и аналитика</div>
+        <p class="policy-text">Бот не использует cookies. Данная страница идей не собирает персональные данные и не требует авторизации.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">6. Изменения политики</div>
+        <p class="policy-text">Политика может обновляться. Актуальная версия всегда доступна на этой странице. Продолжение использования бота означает согласие с изменениями.</p>
+      </div>
+    `
+  },
+  terms: {
+    title: 'Пользовательское <span>соглашение</span>',
+    html: `
+      <div class="policy-section">
+        <div class="policy-section-title">1. Предмет соглашения</div>
+        <p class="policy-text">Настоящее соглашение регулирует использование игрового бота <b>@bot_gesta_bot</b> в мессенджере Telegram. GESTA является развлекательной игрой — все операции происходят с <b>виртуальной валютой</b> и не имеют реальной денежной ценности.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">2. Возраст и доступ</div>
+        <p class="policy-text">Использование бота разрешено лицам <b>от 18 лет</b>. Регистрируясь в игре, вы подтверждаете достижение этого возраста.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">3. Права и ограничения</div>
+        <p class="policy-text">Запрещено: использование ботов и автоматических скриптов, продажа игровых аккаунтов за реальные деньги, намеренное использование багов и эксплойтов, оскорбления других игроков. Нарушение ведёт к <b>блокировке аккаунта</b> без предупреждения.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">4. Виртуальная валюта</div>
+        <p class="policy-text">Все игровые монеты, ресурсы и предметы являются <b>виртуальными</b>. Они не имеют реальной стоимости, не подлежат обмену на реальные деньги и не возвращаются при блокировке аккаунта.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">5. Ответственность</div>
+        <p class="policy-text">Разработчик оставляет за собой право изменять механики игры, обнулять сезоны и проводить технические работы. Разработчик не несёт ответственности за потерю игрового прогресса вследствие технических сбоев.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">6. Контакты</div>
+        <p class="policy-text">По всем вопросам, жалобам и предложениям обращайтесь к разработчику напрямую: <b>@Tiffor</b> в Telegram.</p>
+      </div>
+    `
+  },
+  rules: {
+    title: 'Правила <span>игры</span>',
+    html: `
+      <div class="policy-section">
+        <div class="policy-section-title">⚡ Основы</div>
+        <p class="policy-text">GESTA — экономическая Telegram-игра. Ты строишь бизнес-империю в виртуальном городе: покупаешь районы, открываешь фабрики, играешь на бирже, участвуешь в кланах и боришься за пост <b>Мэра города</b>.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">💰 Экономика</div>
+        <p class="policy-text">Зарабатывай виртуальные деньги через работу, фабрики, казино и биржу. Все транзакции внутри игры. Налог с операций идёт в городскую казну, которой управляет <b>Мэр</b>.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">🏙️ Районы и сезоны</div>
+        <p class="policy-text">Город разделён на <b>6 районов</b>, каждый с уникальными бонусами. Игра идёт сезонами — в конце каждого сезона подводятся итоги и выдаются награды лидерам. Сезон длится несколько недель.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">⚔️ Кланы</div>
+        <p class="policy-text">Объединяйся с другими игроками в кланы до <b>10 человек</b>. Кланы захватывают районы, воюют между собой и получают коллективные бонусы. Лидер клана назначает членов и принимает решения.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">🚫 Запрещено</div>
+        <p class="policy-text"><b>Читерство</b> — использование сторонних программ или багов в свою пользу. <b>Токсичность</b> — оскорбления, угрозы, спам в игровых чатах. <b>Мультиаккаунтинг</b> — создание нескольких аккаунтов одним человеком. Нарушение = <b>бан</b>.</p>
+      </div>
+      <div class="policy-section">
+        <div class="policy-section-title">🎮 Начать играть</div>
+        <p class="policy-text">Напиши <b>/start</b> боту <b>@bot_gesta_bot</b> в Telegram. Первые шаги объяснит туториал. Удачи в построении империи!</p>
+      </div>
+    `
+  }
+};
+
+function openPolicy(type) {
+  const c = POLICY_CONTENT[type];
+  document.getElementById('policyTitle').innerHTML = c.title;
+  document.getElementById('policyBody').innerHTML = c.html;
+  document.querySelectorAll('.policy-tab').forEach((t,i) => {
+    const types = ['privacy','terms','rules'];
+    t.classList.toggle('active', types[i] === type);
+  });
+  document.getElementById('policyBg').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function switchPolicy(type, btn) {
+  const c = POLICY_CONTENT[type];
+  document.getElementById('policyTitle').innerHTML = c.title;
+  document.getElementById('policyBody').innerHTML = c.html;
+  document.querySelectorAll('.policy-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function closePolicy() {
+  document.getElementById('policyBg').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closePolicyByBg(e) {
+  if (e.target === document.getElementById('policyBg')) closePolicy();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closePolicy(); } });
+
 
 document.getElementById("search").addEventListener("input",e=>{q=e.target.value.toLowerCase().trim();render();});
 document.getElementById("sort").addEventListener("change",e=>{srt=e.target.value;render();});
